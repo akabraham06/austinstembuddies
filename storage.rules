@@ -1,0 +1,45 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Officers images
+    match /officers/{fileName} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Hero images
+    match /hero/{fileName} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Member profile images
+    match /members/{fileName} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Event images
+    match /events/{fileName} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Resume uploads
+    match /resumes/{fileName} {
+      allow read: if isAuthenticated();  // Only authenticated users can read
+      allow create: if true;  // Anyone can upload new resumes
+      allow update: if false;  // Resumes cannot be modified once uploaded
+      allow delete: if isAuthenticated();  // Only authenticated users can delete
+    }
+
+    // Catch-all rule to deny access to unspecified paths
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+} 

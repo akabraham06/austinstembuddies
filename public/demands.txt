@@ -1,0 +1,17 @@
+you still haven't replaced teh favicon logo either. 
+
+okay, now so I just submitted from the emailing list form on the website, and the submission is registering within firebase, but the ui within the cms is not updating to show this. like I said, create a spreadsheet ui for each database that displays submitted data - that is, the emailing list form, the partners form, and the member application form.
+
+you did not apply my ui updates for the member application form - that is, it should have the same format as the emailing list form as well as an input that asks for resume submission and why they want to join. within the cms, there should be an option to 'turn off' this form, which in the ui, will present the form with a message that just says 'sorry, applications are currently closed'. 
+
+for officers, there should be, within the cms, the option to change each officer image and their respective names and bios. the hero image should also be converted to a set of images that change over time with a nifty bouncy animation (slideshow) - though it doesn't need slideshow controls. Users should be able to add images to this slideshow within teh cms. 
+
+next, the cms should have a section to update the Our Events page, where an image and a small description can replace the skeleton framework im place. within this section, another button should be added at the bottom (formatted accordingly), titled 'Add our google calendar'. the link for this button is provided here: @https://calendar.google.com/calendar/u/2/r?cid=YXVzdGluc3RlbWJ1ZGRpZXNAZ21haWwuY29t&pli=1  
+
+the webmaster should have the ability to add and delete 'members' - this will also be displayed within a spreadsheet UI. the attached screenshot has the required UI. match it.
+
+I need to update the current ui within the members section that has a button that says 'Point Submissions - for Current Members'. this will link to another modal form. It should have the listed type of point opportunity, officer position, name and date of event. when a member submits from this form; members are restricted to 5 submissions daily. the webmaster should see these submission come in within real time within the cms - they should be able to approve and/or disapprove these point submissions, and will be reflected within the spreadsheet listed above by adding the point amount to their total points if approved. if disapproved, the submission is simply discarded. 
+
+when a user goes to check their points, they will simply type their first and last name - this will verify that they are a member from this spreadsheet, and will retrieve their total points.
+
+on a broader note, any time an image and/or asset is empty or not supplied, a corresponding skeleton framework should take its place. 

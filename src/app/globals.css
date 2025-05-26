@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4E3B5;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9DC88D;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C4E3B5 #f1f1f1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --foreground: 26, 26, 26;
+  --background: 255, 255, 255;
+  --primary: 45, 63, 132;
+  --secondary: 74, 144, 226;
+  --accent: 247, 179, 43;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background-light text-text-primary;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto max-w-content w-full px-4 sm:px-6 lg:px-8 overflow-hidden;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-wide w-full px-4 sm:px-6 lg:px-8 overflow-hidden;
+  }
+
+  /* Mobile Container Fixes */
+  .mobile-container {
+    @apply max-w-[100vw] overflow-x-hidden;
+  }
+
+  /* Prevent Horizontal Scroll */
+  .no-horizontal-scroll {
+    @apply overflow-x-hidden;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl font-bold tracking-tight text-text-primary;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-semibold tracking-tight text-text-primary;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-semibold tracking-tight text-text-primary;
+  }
+
+  .heading-sm {
+    @apply text-xl sm:text-2xl font-semibold tracking-tight text-text-primary;
+  }
+
+  .prose-custom {
+    @apply prose prose-lg max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-brand-primary prose-a:no-underline hover:prose-a:text-brand-secondary prose-strong:text-text-primary;
+  }
+
+  /* CMS Specific Styles */
+  .cms-table-container {
+    @apply w-full overflow-x-auto rounded-lg shadow bg-white;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cms-table {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+
+  .cms-table-header {
+    @apply bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  .cms-table-cell {
+    @apply px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+
+  .cms-table-row {
+    @apply hover:bg-gray-50 transition-colors;
+  }
+
+  .cms-form-input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 text-sm;
+  }
+
+  .cms-button {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary;
+  }
+
+  .cms-button-primary {
+    @apply cms-button bg-brand-primary text-white hover:bg-brand-secondary;
+  }
+
+  .cms-button-secondary {
+    @apply cms-button bg-white text-text-secondary hover:bg-brand-primary/10;
+  }
+
+  .cms-card {
+    @apply bg-white rounded-lg shadow-sm p-4 sm:p-6;
+  }
+
+  .cms-section {
+    @apply space-y-6;
+  }
+
+  .cms-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Keep the custom-scrollbar class for specific elements that might need different scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #C4E3B5;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9DC88D;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #C4E3B5 #f1f1f1;
+}
