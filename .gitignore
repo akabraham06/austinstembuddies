@@ -56,3 +56,6 @@ env/
 venv/
 .env/
 .venv/
+
+# Sensitive files
+service_account.json
